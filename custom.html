@@ -11,6 +11,7 @@
             --text-color: orange;
             --border-color: steelblue;
             --background-color: steelblue;
+            --side-width: 200px;
         }
         h1{
             color: var(--text-color);
@@ -26,6 +27,25 @@
             background-color: var(--background-color);
             color: var(--text-color);
         }
+
+        /* practice calc */
+        .side-nav, .blogs{
+            height: 300px;
+            float: left;
+        }
+        aside{
+            float: left;
+            background-color: yellowgreen;
+            width: var(--side-width);
+        }
+        article{
+            background-color: yellow;
+            /* width: calc(100% - 200px); */
+            width: calc(100% - var(--side-width));
+            /* width: calc(100% - 2*var(--side-width)); */
+        }
+        /* practice calc */
+
         footer{
             color: var(--text-color);
         }
@@ -40,6 +60,14 @@
     <main>
         <h2>My Main Section</h2>
         <h6>This is H6</h6>
+        <section>
+            <aside class="side-nav">
+                <h3>Aside</h3>
+            </aside>
+            <article class="blogs">
+                <p>Blogs</p>
+            </article>
+        </section>
     </main>
     <footer>
         <small>copyright</small>
